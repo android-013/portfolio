@@ -73,6 +73,8 @@ body, html {
     position: relative;
     width: 60px;
     height: 60px;
+    margin: 0px;
+    text-decoration: none; /* Remove underline from links */
 }
 
 .social-link .icon {
@@ -97,9 +99,27 @@ body, html {
     opacity: 1; /* Show hover icon on hover */
 }
 
+/* Styling for text below icons */
+.social-link a .icon-text {
+    display: block;
+    font-size: 14px; /* Adjust text size */
+    color: #ffffff; /* White color for text */
+    margin-top: 70px; /* Space between icon and text */
+    text-align: center; /* Center align text */
+    transition: color 0.3s ease-in-out;
+}
+
+.social-link a:hover .icon-text {
+    color: #00bcd4; /* Change text color on hover */
+}
+
+/* Optional: Styling for the h1 if needed */
 .social-link h1 {
     color: #ffffff;
+    font-size: 24px; /* Adjust title font size */
+    margin-bottom: 20px; /* Space below the title */
 }
+
 
 /* Welcome Section Styling */
 .welcome-section {
@@ -123,6 +143,18 @@ body, html {
     font-weight: bold;
     margin-bottom: 1.2rem;
 }
+
+@media (max-width: 600px) {
+    .social-link a {
+        display: inline-block;
+        position: relative;
+        width: 50px;
+        height: 50px;
+        margin: 0px;
+        text-decoration: none; /* Remove underline from links */
+    }
+}
+
 
 /* Ensuring Visibility on All Screen Sizes */
 @media (max-height: 600px) {
@@ -388,4 +420,7 @@ body, html {
         font-size: 0.9rem;
     }
 }
+
+
+
 
