@@ -158,8 +158,13 @@ body, html {
         width: 50px;
         height: 50px;
         margin: 0px;
-        font-size: 18px;
         text-decoration: none; /* Remove underline from links */
+    }
+}
+
+@media (max-width: 600px) {
+    .social-link a .icon-text {
+      font-size: 11px; /* Adjust font size for smaller screens */
     }
 }
 
