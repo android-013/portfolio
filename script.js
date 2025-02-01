@@ -44,4 +44,5 @@ function drawMatrix() {
 }
 
 initializeMatrix();
+
 setInterval(drawMatrix, 50);
