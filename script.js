@@ -9,7 +9,9 @@ canvas.height = window.innerHeight;
 // Adjust canvas size on window resize
 window.addEventListener('resize', () => {
     canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    if (window.innerWidth >= 750) {
+        canvas.height = window.innerHeight;
+    }
     initializeMatrix(); // Reinitialize after resizing
 });
 
