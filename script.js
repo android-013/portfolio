@@ -6,6 +6,15 @@ const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
+// Adjust canvas size on window resize
+window.addEventListener('resize', () => {
+    if (window.innerWidth >= 750) {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        initializeMatrix(); // Reinitialize after resizing
+    }
+});
+
 // Matrix code logic
 const characters = 'AZIZRIFAT(){}[]/|azizrifat@013';
 const fontSize = 10;
