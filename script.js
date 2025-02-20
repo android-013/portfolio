@@ -16,7 +16,7 @@ window.addEventListener('resize', () => {
 });
 
 // Matrix code logic
-const characters = 'AZIZRIFAT(){}[]/|azizrifat@013';
+const characters = 'AZIZRIFAT@013(){}[]/|azizrifat@013';
 const fontSize = 10;
 const columns = canvas.width / fontSize;
 const drops = Array(Math.floor(columns)).fill(1);
