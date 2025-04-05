@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horoscope Detector</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Enter Your Birthday</h1>
+        <input type="date" id="birthdate">
+        <button id="findSign">Find Zodiac Sign</button>
+        <p id="zodiacResult"></p>
+        <button id="showHoroscope" style="display:none;">Show Horoscope</button>
+    </div>
+
+    <div id="loadingPopup" class="popup">
+        <div class="popup-content">
+            <p id="loadingText">Scanning...</p>
+            <div class="loading-container">
+                <div id="loadingBar" class="loading-bar"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="finalPopup" class="popup">
+        <div class="popup-content">
+            <p>Zodiac signs are not real. You are stupid to believe in them.</p>
+            <button onclick="closePopup()">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

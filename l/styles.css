@@ -1,0 +1,106 @@
+/* Dark Gradient Background */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1b1b2f, #162447);
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Centered Container */
+.container {
+    background: rgba(0, 0, 0, 0.85);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    width: 300px;
+    text-align: center;
+}
+
+/* Headings */
+h2 {
+    margin-bottom: 15px;
+    font-size: 22px;
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Labels */
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-size: 14px;
+}
+
+/* Input Fields */
+input {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.1);
+    transition: 0.3s;
+}
+
+input:focus {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 10px #00c6ff;
+}
+
+/* Button Styling */
+button {
+    margin-top: 15px;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: linear-gradient(90deg, #0072ff, #00c6ff);
+    color: #fff;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    box-shadow: 0 0 12px #00c6ff;
+}
+
+/* Results Styling */
+h3 {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #00c6ff;
+}
+
+p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+span {
+    font-weight: bold;
+    color: #00ffcc;
+}
+
+/* Remove spinner arrows in number input fields */
+input[type="number"] {
+    appearance: textfield; /* Standard */
+    -moz-appearance: textfield; /* Firefox */
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; /* Removes any extra spacing */
+}

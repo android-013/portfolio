@@ -1,0 +1,81 @@
+/* Body and overall layout */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Title styling */
+h1 {
+    font-size: 3rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Textarea styling */
+textarea {
+    width: 80%;
+    max-width: 600px;
+    height: 150px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    color: white;
+    font-size: 18px;
+    margin: 10px 0;
+    padding: 15px;
+    transition: background-color 0.3s ease;
+    resize: none;
+}
+
+/* Focus effect on textarea */
+textarea:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    outline: none;
+}
+
+/* Button container */
+div {
+    margin-top: 20px;
+}
+
+/* Button styling */
+button {
+    background-color: #2980b9;
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    margin: 10px;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #3498db;
+    transform: translateY(-3px);
+}
+
+/* Button active effect */
+button:active {
+    transform: translateY(1px);
+}
+
+/* Result section */
+h3 {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    color: #ecf0f1;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
