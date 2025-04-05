@@ -120,9 +120,10 @@ body, html {
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 100vh; /* Ensures full viewport height */
+    height: 100vh;
     padding: 2rem;
     color: #fff;
+    overflow: hidden;
 }
 
 .welcome-section h1 {
@@ -143,6 +144,72 @@ body, html {
         padding: 4rem 1rem;
     }
 }
+
+/* Animation Base */
+.welcome-section h1, .welcome-section h2 {
+    opacity: 0;
+}
+
+/* First Line - Slide from Left */
+.welcome-section h1:first-of-type {
+    animation: slideInLeft 1s ease-out forwards;
+    animation-delay: 0.3s;
+}
+
+/* Second Line - Zoom In */
+.welcome-section h2 {
+    animation: zoomIn 1s ease-out forwards;
+    animation-delay: 1s;
+}
+
+/* Third Line - Slide from Bottom */
+.welcome-section h1:last-of-type {
+    animation: slideInUp 1s ease-out forwards;
+    animation-delay: 1.7s;
+}
+
+/* Animations */
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-height: 600px) {
+    .welcome-section {
+        height: auto;
+        padding: 4rem 1rem;
+    }
+}
+
 
 /* About Section Styling */
 .about-over {
