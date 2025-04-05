@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 profileBio.classList.add('visible');
+            } else {
+                profileBio.classList.remove('visible');
             }
         });
     }, { threshold: 0.2 });
