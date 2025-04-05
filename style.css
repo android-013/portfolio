@@ -1,0 +1,519 @@
+/* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* copy this part */
+/* Matrix Canvas Styling */
+#matrixCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Keep it behind content */
+}
+
+/* Navbar Styling */
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 15px; /* Added more padding for spacing */
+    background: rgba(0, 0, 0, 0.7); /* Slight background for better readability */
+    position: fixed;
+    width: calc(100% - 20px); /* Prevents overflow */
+    top: 10px;
+    left: 10px; /* Adds left margin */
+    right: 10px; /* Adds right margin */
+    z-index: 1000; /* Higher z-index for better stacking */
+    color: white;
+    font-size: 1.2rem; /* Slightly smaller text size */
+    height: 50px; /* Set a specific height for consistency */
+    border-radius: 8px; /* Rounded corners for a sleek look */
+}
+
+/* Left Side (Profile + Name) */
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between profile picture and name */
+}
+
+/* Profile Picture in Navbar */
+.profile-pic-nav {
+    border-radius: 20%; /* More circular profile picture */
+    width: 40px; /* Smaller size */
+    height: 40px;
+    object-fit: cover;
+    border: 1px solid #555; /* White border for visibility */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+}
+
+.nav-name {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Right Side (Navigation Links) */
+.nav-right {
+    display: flex;
+    gap: 15px; /* Space between links */
+}
+
+/* Navbar Links (if any) */
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 5px; /* Adjust spacing between links */
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.nav-right a:hover {
+    color: #00bcd4; /* Highlight color */
+}
+
+/* Responsive (for smaller screens) */
+@media (max-width: 768px) {
+    .navbar {
+        width: calc(100% - 20px); /* Ensures navbar fits within small screens */
+        left: 10px;
+        right: 10px;
+        padding: 8px 10px;
+    }
+    .profile-pic-nav {
+        width: 30px;
+        height: 30px;
+    }
+    .nav-right {
+        gap: 10px;
+    }
+    .nav-right a {
+        font-size: 0.8rem;
+    }
+}
+
+
+/* Responsive Adjustments for Very Small Screens */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 5px;
+        font-size: 0.8rem;
+    }
+    
+    .profile-pic-nav {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+
+/* Welcome Section Styling */
+.welcome-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh; /* Ensures full viewport height */
+    padding: 2rem;
+    color: #fff;
+}
+
+.welcome-section h1 {
+    font-size: clamp(1rem, 3vw, 2rem); /* Responsive font size */
+    margin-bottom: 1rem;
+}
+
+.welcome-section h2 {
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    font-weight: bold;
+    margin-bottom: 1.2rem;
+}
+
+/* Ensuring Visibility on All Screen Sizes */
+@media (max-height: 600px) {
+    .welcome-section {
+        height: auto;
+        padding: 4rem 1rem;
+    }
+}
+
+/* About Section Styling */
+.about-over {
+    position: relative; /* Establishes a positioning context */
+    text-align: center;
+    display: flex;
+    bottom : 0;
+    justify-content: center;
+    align-items: center;
+    height: 50vh; /* viewport height */
+    overflow: hidden;
+}
+
+/* Background Title Text */
+.about-title {
+    font-size: clamp(10rem, 20vw, 25rem); /* Responsive font size */
+    color: rgba(128, 128, 128, 0.5); /* Light gray with transparency */
+    user-select: none; /* Prevent text selection */
+    position: relative;
+    z-index: 0; /* Background layer */
+    white-space: nowrap; /* Prevents wrapping */
+}
+
+/* Foreground Subtitle Text - Placed on top of the title */
+.about-subtitle {
+    font-size: clamp(1rem, 3vw, 2rem); /* Responsive font size */
+    color: rgb(255, 255, 255); /* Overlay text color */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); /* Subtle text shadow */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1; /* Above the title */
+    white-space: nowrap; /* Prevents wrapping */
+    padding: 0 1rem; /* Avoid edges on narrow screens */
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+
+    .about-over {
+        height: 40vh; /* Adjust height for smaller screens */
+    }
+    .about-title {
+        font-size: 6rem; /* Adjust font size for mobile */
+    }
+
+    .about-subtitle {
+        font-size: 1rem; /* Adjust subtitle font size */
+    }
+}
+
+.social-link {
+    text-align: center;
+    margin: 20px auto;
+}
+
+.social-link a {
+    display: inline-block;
+    position: relative;
+    width: 60px;
+    height: 60px;
+    margin: 0px;
+    text-decoration: none; /* Remove underline from links */
+}
+
+.social-link .icon {
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.2s ease-in-out, filter 0.3s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: invert(1) brightness(2); /* Converts black to white */
+}
+
+.social-link .hover-icon {
+    opacity: 0; /* Hidden by default */
+}
+
+.social-link a:hover .default-icon {
+    opacity: 0; /* Hide default icon on hover */
+}
+
+.social-link a:hover .hover-icon {
+    opacity: 1; /* Show hover icon on hover */
+}
+
+/* Styling for text below icons */
+.social-link a .icon-text {
+    display: block;
+    font-size: 14px; /* Adjust text size */
+    color: #ffffff; /* White color for text */
+    margin-top: 70px; /* Space between icon and text */
+    text-align: center; /* Center align text */
+    transition: color 0.3s ease-in-out;
+}
+
+.social-link a:hover .icon-text {
+    color: #00bcd4; /* Change text color on hover */
+}
+
+/* Optional: Styling for the h1 if needed */
+.social-link h1 {
+    color: #ffffff;
+    font-size: 24px; /* Adjust title font size */
+    margin-bottom: 20px; /* Space below the title */
+}
+
+@media (max-width: 600px) {
+    .social-link a {
+        display: inline-block;
+        position: relative;
+        width: 50px;
+        height: 50px;
+        margin: 0px;
+        text-decoration: none; /* Remove underline from links */
+    }
+}
+
+@media (max-width: 600px) {
+    .social-link a .icon-text {
+      font-size: 11px; /* Adjust font size for smaller screens */
+    }
+}
+
+/* Profile Section Styling */
+.profile-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+    flex-wrap: wrap;
+}
+
+/* Profile Picture Styling */
+.profile-pic {
+    flex: 1;
+    max-width: 300px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+/* Bio Styling */
+.profile-bio {
+    flex: 2;
+    background: rgba(255, 255, 255, 0.75);
+    padding: 1.5rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: justify;
+    font-size: 1rem;
+}
+
+/* Headline Styling */
+.profile-bio h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Paragraph Styling */
+.profile-bio p {
+    margin: 0.5rem 0;
+    line-height: 1.6;
+}
+
+/* Highlighted Text */
+.bio-highlight {
+    margin-top: 1rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+/* List Styling */
+.profile-bio ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.profile-bio li {
+    margin: 0.3rem 0;
+    font-size: 1rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .profile-section {
+        flex-direction: column;
+    }
+
+    .profile-pic {
+        width: 80%;
+        height: auto;
+        max-width: 300px;
+    }
+
+    .profile-bio {
+        width: 80%;
+        text-align: center;
+    }
+
+    .profile-bio h2 {
+        font-size: 1.2rem;
+    }
+
+    .profile-bio li {
+        font-size: 0.9rem;
+    }
+}
+
+/* Section Styling */
+.services-section {
+    text-align: center;
+     padding: 4rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* Icons Styling */
+.service-icons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.service-icons img {
+    width: 60px; /* Icon size */
+    height: 60px;
+    filter: invert(1); /* Makes SVG white */
+    transition: transform 0.3s ease-in-out;
+}
+
+.service-icons img:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+/* Text Styling */
+.service-text {
+    font-size: 1.5rem;
+    color: #ffffff; /* White text */
+    max-width: 600px;
+    text-align: center;
+    line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .service-icons img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .service-text {
+        font-size: 1.2rem;
+    }
+}
+
+/* Language Section Styling */
+.language-section {
+    text-align: center;
+    padding: 4rem 1rem;
+}
+
+/* Icon Grid Layout */
+.language-items {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+/* Individual Item Styling */
+.language-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem; /* Space between icon and text */
+}
+
+/* Icon Styling */
+.language-item img {
+    width: 80px;
+    height: 80px;
+    filter: invert(1); /* Make SVG icons white */
+    transition: transform 0.3s ease-in-out;
+}
+
+.language-item img:hover {
+    transform: scale(1.1); /* Slight zoom effect */
+}
+
+/* Language Text Styling */
+.language-text {
+    font-size: 1rem;
+    color: #ffffff; /* White text */
+    text-align: center;
+    font-weight: 500;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .language-item img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .language-text {
+        font-size: 0.9rem;
+    }
+}
+
+.project {
+    padding: 100px 20px 40px; /* Add top padding to avoid overlap with fixed navbar */
+    color: white;
+    text-align: center;
+}
+
+.project h1 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    color: #ffffff; /* Accent color for heading */
+}
+
+.buttons-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.buttons-container button {
+    background: #55555588;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    padding: 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.buttons-container button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 255, 200, 0.4);
+}
+
+
+
+
