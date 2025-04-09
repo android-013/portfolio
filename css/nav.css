@@ -1,0 +1,95 @@
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 15px; /* Added more padding for spacing */
+    background: rgba(0, 0, 0, 0.7); /* Slight background for better readability */
+    position: fixed;
+    width: calc(100% - 20px); /* Prevents overflow */
+    top: 10px;
+    left: 10px; /* Adds left margin */
+    right: 10px; /* Adds right margin */
+    z-index: 1000; /* Higher z-index for better stacking */
+    color: white;
+    font-size: 1.2rem; /* Slightly smaller text size */
+    height: 50px; /* Set a specific height for consistency */
+    border-radius: 8px; /* Rounded corners for a sleek look */
+}
+
+/* Left Side (Profile + Name) */
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between profile picture and name */
+}
+
+/* Profile Picture in Navbar */
+.profile-pic-nav {
+    border-radius: 20%; /* More circular profile picture */
+    width: 40px; /* Smaller size */
+    height: 40px;
+    object-fit: cover;
+    border: 1px solid #555; /* White border for visibility */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+}
+
+.nav-name {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Right Side (Navigation Links) */
+.nav-right {
+    display: flex;
+    gap: 15px; /* Space between links */
+}
+
+/* Navbar Links (if any) */
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 5px; /* Adjust spacing between links */
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.nav-right a:hover {
+    color: #00bcd4; /* Highlight color */
+}
+
+/* Responsive (for smaller screens) */
+@media (max-width: 768px) {
+    .navbar {
+        width: calc(100% - 20px); /* Ensures navbar fits within small screens */
+        left: 10px;
+        right: 10px;
+        padding: 8px 10px;
+        max-height: 30px;
+    }
+    .profile-pic-nav {
+        width: 30px;
+        height: 30px;
+    }
+    .nav-right {
+        gap: 10px;
+    }
+    .nav-right a {
+        font-size: 0.8rem;
+    }
+}
+
+
+/* Responsive Adjustments for Very Small Screens */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 5px;
+        font-size: 0.8rem;
+        max-height: 40px;
+    }
+    
+    .profile-pic-nav {
+        width: 30px;
+        height: 30px;
+    }
+}

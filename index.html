@@ -21,6 +21,15 @@
 
     <title>Aziz Rifat</title>
     <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="css/bg.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/welcome.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/services.css">
+    <link rel="stylesheet" href="css/language.css">
+
 </head>
 <body>
     <!-- Matrix Rain Canvas -->
@@ -99,52 +108,89 @@
 
     <section class="language-section">
         <div class="language-items">
-            <div class="language-item">
+            <div class="language-item bounce1">
                 <img src="images/electronjs-svgrepo-com.svg" alt="ElectronJS">
                 <p class="language-text">ReactJS</p>
             </div>
-            <div class="language-item">
+            <div class="language-item bounce2">
                 <img src="images/nodejs01-svgrepo-com.svg" alt="NodeJS">
                 <p class="language-text">NodeJS</p>
             </div>
-            <!--  
-            <div class="language-item">
-                <img src="images/icons8-express-js.svg" alt="ExpressJS">
-                <p class="language-text">expressJs</p>
-            </div>
-            -->
-            <div class="language-item">
+            <div class="language-item bounce3">
                 <img src="images/icons8-nextjs.svg" alt="nextJs">
                 <p class="language-text">nextJs</p>
             </div>
-            <div class="language-item">
+            <div class="language-item bounce4">
                 <img src="images/html5-01-svgrepo-com.svg" alt="HTML5">
                 <p class="language-text">HTML</p>
             </div>
-            <div class="language-item">
+            <div class="language-item bounce5">
                 <img src="images/css3-01-svgrepo-com.svg" alt="CSS3">
                 <p class="language-text">CSS</p>
             </div>
-            <div class="language-item">
+            <div class="language-item bounce6">
                 <img src="images/aws-svgrepo-com.svg" alt="aws">
                 <p class="language-text">AWS</p>
             </div>
-            <!--
-            <div class="language-item">
-                <img src="images/cloudflare-svgrepo-com.svg" alt="Cloudflare">
-                <p class="language-text">Cloudflare</p>
-            </div>
-            -->
-            <div class="language-item">
+            <div class="language-item bounce7">
                 <img src="images/mysql-svgrepo-com.svg" alt="SQL">
                 <p class="language-text">mySQL</p>
             </div>
-            <div class="language-item">
+            <div class="language-item bounce8">
                 <img src="images/firebase-svgrepo-com.svg" alt="firebase">
                 <p class="language-text">Firebase</p>
             </div>
         </div>
     </section>
+
+    <style>
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .language-item {
+            display: inline-block;
+            animation: bounce 2.5s infinite;
+        }
+
+        .bounce1 {
+            animation-delay: 0s;
+        }
+
+        .bounce2 {
+            animation-delay: 0.3s;
+        }
+
+        .bounce3 {
+            animation-delay: 0.6s;
+        }
+
+        .bounce4 {
+            animation-delay: 0.9s;
+        }
+
+        .bounce5 {
+            animation-delay: 1.2s;
+        }
+
+        .bounce6 {
+            animation-delay: 1.5s;
+        }
+
+        .bounce7 {
+            animation-delay: 1.8s;
+        }
+
+        .bounce8 {
+            animation-delay: 2.1s;
+        }
+    </style>
+
 
     <section class="about-over" id ="projects">
         <h1 class="about-title">Projects</h1>
@@ -152,6 +198,7 @@
     </section>
 
     <section class="project">
+        
         <h1>Tools for everyday</h1>
         <div class="buttons-container">
             <button onclick="location.href='a/index.html'">Ages Calculator</button>
@@ -165,7 +212,9 @@
             <button onclick="location.href='https://android-013.github.io/Unit-Converter/'">Unit Converter</button>
             <button onclick="location.href='https://android-013.github.io/Elo-Poll-Front/'">Elo Voting System</button>
         </div>
+
         <h1>Games for fun</h1>
+
         <div class="buttons-container">
             <button onclick="location.href='https://android-013.github.io/Card-Game-Front/'">Card Matching Game</button>
             <button onclick="location.href='https://android-013.github.io/5-way-rps/'">Five Way (Star trek) RPS</button>
@@ -174,7 +223,9 @@
             <button onclick="location.href='https://android-013.github.io/Slot-machine-front/'">Slot Machine</button>
             <button onclick="location.href='https://android-013.github.io/Tic-Tac-Toe/'">Tic Tac Toe</button>
         </div>
+
         <h1>IDK, I was Boared</h1>
+
         <div class="buttons-container">
             <button onclick="location.href='https://android-013.github.io/bad-ui/'">Bad UI, Worse UX</button>
             <button onclick="location.href='h/index.html'">Horoscope Finder</button>
@@ -205,7 +256,7 @@
                 <img src="images/i2.svg" alt="Social Icon Hover" class="icon hover-icon">
                 <p class="icon-text">Instagram</p>
             </a>
-            <a href="https://wa.me/8801303140932" target="_blank">
+            <a href="https://wa.me/8801766442805" target="_blank">
                 <img src="images/w1.svg" alt="Social Icon" class="icon default-icon">
                 <img src="images/w2.svg" alt="Social Icon Hover" class="icon hover-icon">
                 <p class="icon-text">WhatsApp</p>
@@ -220,7 +271,6 @@
                 <img src="images/l2.svg" alt="Social Icon Hover" class="icon hover-icon">
                 <p class="icon-text">LinkedIn</p>
             </a>
-              
         </div>
         <div>
             <p></p>

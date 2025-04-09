@@ -1,0 +1,151 @@
+/* Profile Section Styling */
+.profile-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+    flex-wrap: wrap;
+}
+
+/* Profile Picture Styling */
+.profile-pic {
+    flex: 1;
+    max-width: 300px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+/* Bio Styling */
+/* Keep your existing design */
+.profile-bio {
+    flex: 2;
+    background: rgba(255, 255, 255, 0.75);
+    padding: 1.5rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: justify;
+    font-size: 1rem;
+
+    /* Animation prep */
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.profile-bio.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Headline Styling */
+.profile-bio h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Typing animation — optional */
+.profile-bio h2.typewriter {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid #000;
+    width: 0;
+    animation: typing 3s steps(40, end) forwards, blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+/* Paragraph Styling */
+.profile-bio p {
+    margin: 0.5rem 0;
+    line-height: 1.6;
+}
+
+/* Highlighted Text */
+.bio-highlight {
+    margin-top: 1rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+/* List Styling */
+.profile-bio ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.profile-bio li {
+    margin: 0.3rem 0;
+    font-size: 1rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .profile-section {
+        flex-direction: column;
+    }
+
+    .profile-pic {
+        width: 80%;
+        height: auto;
+        max-width: 300px;
+    }
+
+    .profile-bio {
+        width: 80%;
+        text-align: center;
+    }
+
+    .profile-bio h2 {
+        font-size: 1.2rem;
+    }
+
+    .profile-bio li {
+        font-size: 0.9rem;
+    }
+}
+
+/* ✨ Animation classes for staggered elements */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.visible .fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Delay classes for stagger effect */
+.delay-1 { transition-delay: 0.3s; }
+.delay-2 { transition-delay: 0.6s; }
+.delay-3 { transition-delay: 0.9s; }
+.delay-4 { transition-delay: 1.2s; }
+.delay-5 { transition-delay: 1.5s; }
+.delay-6 { transition-delay: 1.8s; }
+.delay-7 { transition-delay: 2.1s; }
+.delay-8 { transition-delay: 2.4s; }

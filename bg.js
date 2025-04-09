@@ -21,10 +21,10 @@ const fontSize = 10;
 const columns = canvas.width / fontSize;
 const drops = Array(Math.floor(columns)).fill(1);
 
-function initializeMatrix() {
-    drops.length = Math.floor(canvas.width / fontSize);
-    drops.fill(1);
-}
+//function initializeMatrix() {
+  //  drops.length = Math.floor(canvas.width / fontSize);
+    //drops.fill(1);
+//}
 
 function drawMatrix() {
     ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
@@ -45,6 +45,6 @@ function drawMatrix() {
     }
 }
 
-initializeMatrix();
+//initializeMatrix();
 
 setInterval(drawMatrix, 50);
