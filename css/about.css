@@ -39,7 +39,7 @@
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
     .about-title {
-        font-size: clamp(5rem, 15vw, 10rem); /* Smaller font size for smaller screens */
+        font-size: clamp(4.5rem, 15vw, 9rem); /* Smaller font size for smaller screens */
     }
 
     .about-subtitle {
