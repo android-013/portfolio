@@ -1,7 +1,7 @@
 /* Section Styling */
-.services-section {
+.skills-section {
     text-align: center;
-     padding: 4rem 1rem;
+    padding: 4rem 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -9,28 +9,28 @@
 }
 
 /* Icons Styling */
-.service-icons {
+.skill-icons {
     display: flex;
     justify-content: center;
     gap: 2rem;
     flex-wrap: wrap;
 }
 
-.service-icons img {
-    width: 60px; /* Icon size */
+.skill-icons img {
+    width: 60px;
     height: 60px;
-    filter: invert(1); /* Makes SVG white */
+    filter: invert(1);
     transition: transform 0.3s ease-in-out;
 }
 
-.service-icons img:hover {
-    transform: scale(1.1); /* Slight zoom on hover */
+.skill-icons img:hover {
+    transform: scale(1.1);
 }
 
 /* Text Styling */
-.service-text {
+.skill-text {
     font-size: 1.5rem;
-    color: #ffffff; /* White text */
+    color: #ffffff;
     max-width: 600px;
     text-align: center;
     line-height: 1.5;
@@ -38,12 +38,12 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .service-icons img {
+    .skill-icons img {
         width: 60px;
         height: 60px;
     }
 
-    .service-text {
+    .skill-text {
         font-size: 1.2rem;
     }
 }
