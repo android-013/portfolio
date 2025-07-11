@@ -72,7 +72,7 @@
         height: 30px;
     }
     .nav-right {
-        gap: 10px;
+        gap: 1px;
     }
     .nav-right a {
         font-size: 0.8rem;
