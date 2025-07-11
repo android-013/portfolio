@@ -46,7 +46,6 @@ const observerSlider = new IntersectionObserver((entries) => {
 
 function updateProjects() {
     const h = document.querySelectorAll('.hidden');
-    console.log(h);
     h.forEach((el) => observer.observe(el));
 }
 
