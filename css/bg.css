@@ -6,6 +6,10 @@ body, html {
     font-family: Arial, sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* copy this part */
 /* Matrix Canvas Styling */
 #matrixCanvas {
