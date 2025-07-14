@@ -33,7 +33,7 @@
 
 .buttons-container button:hover {
     transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(0, 255, 200, 0.4);
+    box-shadow: 0 4px 12px #0cc;
 }
 
 @media(prefers-reduced-motion) {
