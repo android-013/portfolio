@@ -1,6 +1,5 @@
 * {
-  scrollbar-width: thin !important;
-  scrollbar-color: #0ff rgba(0, 0, 0, 0) !important;
+  scrollbar-color: #0ff #000 !important;
 }
 
 *::-webkit-scrollbar {
@@ -8,7 +7,7 @@
 }
 
 *::-webkit-scrollbar-track {
-  background-color: rgba(0, 0, 0, 0) !important;
+  background-color: #000 !important;
 }
 
 *::-webkit-scrollbar-thumb {
@@ -19,3 +18,4 @@
 *::-webkit-scrollbar-thumb:hover {
   background-color: #0cc !important;
 }
+

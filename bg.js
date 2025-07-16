@@ -15,6 +15,8 @@ window.addEventListener('resize', () => {
     }
 });
 
+//(()=> {})();
+
 // Matrix code logic
 const characters = 'AZIZRIFAT@013(){}[]/|azizrifat@013';
 const fontSize = 10;
