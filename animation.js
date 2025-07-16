@@ -30,6 +30,22 @@ const hidden1Elements = document.querySelectorAll('.hidden1');
 hiddenElements.forEach((el) => observer1.observe(el));
 
 
+const observer2 = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show2');
+        } else {
+            if (entry.boundingClientRect.top > entry.rootBounds.top) {
+                entry.target.classList.remove('show2');
+            }
+        }
+    });
+});
+
+const hidden2Elements = document.querySelectorAll('.hidden2');
+hiddenElements.forEach((el) => observer2.observe(el));
+
+
 
 const observerBlur = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -53,6 +69,8 @@ function updateProjects() {
     h.forEach((el) => observer.observe(el));
     const h1 = document.querySelectorAll('.hidden1');
     h1.forEach((el) => observer1.observe(el));
+    const h2 = document.querySelectorAll('.hidden2');
+    h2.forEach((el) => observer2.observe(el));
 }
 
 
