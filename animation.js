@@ -13,6 +13,24 @@ const observer = new IntersectionObserver((entries) => {
 const hiddenElements = document.querySelectorAll('.hidden');
 hiddenElements.forEach((el) => observer.observe(el));
 
+
+const observer1 = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show1');
+        } else {
+            if (entry.boundingClientRect.top > entry.rootBounds.top) {
+                entry.target.classList.remove('show1');
+            }
+        }
+    });
+});
+
+const hidden1Elements = document.querySelectorAll('.hidden1');
+hiddenElements.forEach((el) => observer1.observe(el));
+
+
+
 const observerBlur = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -30,23 +48,11 @@ hiddenElementsBlur.forEach((el) => observerBlur.observe(el));
 
 
 
-
-const observerSlider = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.style.width = entry.target.id + '%';
-            entry.target.style.transition =  "all 1s";
-        } else {
-            entry.target.style.width = 0;
-            entry.target.style.transition =  "all 0s";
-        }
-    });
-});
-
-
 function updateProjects() {
     const h = document.querySelectorAll('.hidden');
     h.forEach((el) => observer.observe(el));
+    const h1 = document.querySelectorAll('.hidden1');
+    h1.forEach((el) => observer1.observe(el));
 }
 
 

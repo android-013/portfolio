@@ -36,6 +36,29 @@
     padding: 0 1rem;
 }
 
+.hiddenR {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.6s ease-out;
+}
+
+.showR {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.hiddenL {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 0.6s ease-out;
+}
+
+.showL {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
     .about-title {
