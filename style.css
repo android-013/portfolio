@@ -1,3 +1,7 @@
+body {
+  overflow-x: hidden;
+}
+
 * {
   scrollbar-color: #0ff #000 !important;
 }
