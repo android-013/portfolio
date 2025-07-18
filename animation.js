@@ -77,6 +77,21 @@ const observerBlur = new IntersectionObserver((entries) => {
 const hiddenElementsBlur = document.querySelectorAll('.hiddenBlur');
 hiddenElementsBlur.forEach((el) => observerBlur.observe(el));
 
+const observer4 = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show4');
+        } else {
+            if (entry.boundingClientRect.top > entry.rootBounds.top) {
+                entry.target.classList.remove('show4');
+            }
+        }
+    });
+});
+
+const hidden4Elements = document.querySelectorAll('.hidden4');
+hiddenElements.forEach((el) => observer4.observe(el));
+
 
 
 function updateProjects() {
@@ -88,6 +103,8 @@ function updateProjects() {
     h2.forEach((el) => observer2.observe(el));
     const h3 = document.querySelectorAll('.hidden3');
     h3.forEach((el) => observer3.observe(el));
+    const h4 = document.querySelectorAll('.hidden4');
+    h4.forEach((el) => observer4.observe(el));
 }
 
 
