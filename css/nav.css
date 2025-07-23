@@ -3,19 +3,20 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 5px 15px; /* Added more padding for spacing */
-    background: rgba(0, 0, 0, 0.7); /* Slight background for better readability */
+    padding: 5px 15px;
+    background: rgba(0, 0, 0, 0.7);
     position: fixed;
-    width: calc(100% - 50px); /* Prevents overflow */
+    max-width: calc(100% - 20px);
     top: 10px;
-    left: 10px; /* Adds left margin */
-    right: 10px; /* Adds right margin */
-    z-index: 1000; /* Higher z-index for better stacking */
+    left: 10px;
+    right: 10px;
+    z-index: 1000;
     color: white;
-    font-size: 1.2rem; /* Slightly smaller text size */
-    height: 50px; /* Set a specific height for consistency */
-    border-radius: 8px; /* Rounded corners for a sleek look */
+    font-size: 1.2rem;
+    height: 50px;
+    border-radius: 8px;
 }
+
 
 /* Left Side (Profile + Name) */
 .nav-left {
