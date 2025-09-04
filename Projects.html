@@ -6,7 +6,7 @@
   <title>Project Competition Showcase</title>
   <style>
     body {
-      background: #0d0d0d; /* Dark theme */
+      background: #0d0d0d;
       color: #ffffff;
       font-family: Arial, sans-serif;
       display: flex;
@@ -19,7 +19,7 @@
       background: #1a1a1a;
       border-radius: 12px;
       padding: 30px;
-      width: 600px;
+      width: 650px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.6);
     }
 
@@ -27,6 +27,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      margin-top: 20px;
       margin-bottom: 20px;
     }
 
@@ -36,56 +37,97 @@
       display: flex;
       justify-content: space-between;
       margin-right: 20px;
+      min-width: 180px;
     }
 
     .bar-container {
       flex: 2;
       background: #222;
-      border-radius: 8px;
+      border-radius: 12px;
       overflow: hidden;
-      height: 16px;
+      height: 20px;
+      position: relative;
     }
 
     .bar {
       height: 100%;
       background: linear-gradient(90deg, cyan, #00bcd4);
       width: 0;
-      transition: width 1s ease;
+      border-radius: 12px; /* Rounded ends */
+      transition: width 1.5s ease-out;
+      position: relative;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="row">
-      <div class="label"><span>Projects</span> <span class="num">120</span></div>
-      <div class="bar-container"><div class="bar"></div></div>
+    <div class="row projects-row">
+      <div class="label"><span>Projects</span> <span class="num projects-num">120</span></div>
+      <div class="bar-container">
+        <div class="bar projects-bar"></div>
+      </div>
     </div>
-    <div class="row">
-      <div class="label"><span>Frontend</span> <span class="num">90</span></div>
-      <div class="bar-container"><div class="bar"></div></div>
+    <div class="row frontend-row">
+      <div class="label"><span>Frontend</span> <span class="num frontend-num">90</span></div>
+      <div class="bar-container">
+        <div class="bar frontend-bar"></div>
+      </div>
     </div>
-    <div class="row">
-      <div class="label"><span>Backend</span> <span class="num">60</span></div>
-      <div class="bar-container"><div class="bar"></div></div>
+    <div class="row backend-row">
+      <div class="label"><span>Backend</span> <span class="num backend-num">60</span></div>
+      <div class="bar-container">
+        <div class="bar backend-bar"></div>
+      </div>
     </div>
-    <div class="row">
-      <div class="label"><span>Full Stack</span> <span class="num">30</span></div>
-      <div class="bar-container"><div class="bar"></div></div>
+    <div class="row fullstack-row">
+      <div class="label"><span>Full Stack</span> <span class="num fullstack-num">30</span></div>
+      <div class="bar-container">
+        <div class="bar fullstack-bar"></div>
+      </div>
     </div>
   </div>
 
   <script>
-    // Get all numbers
-    const nums = Array.from(document.querySelectorAll(".num"))
-                      .map(n => parseInt(n.textContent));
+    // Rows with unique classes
+    const rows = [
+      { numClass: ".projects-num", barClass: ".projects-bar" },
+      { numClass: ".frontend-num", barClass: ".frontend-bar" },
+      { numClass: ".backend-num", barClass: ".backend-bar" },
+      { numClass: ".fullstack-num", barClass: ".fullstack-bar" },
+    ];
 
-    const max = Math.max(...nums);
+    const values = rows.map(r => parseInt(document.querySelector(r.numClass).textContent));
+    const max = Math.max(...values);
 
-    document.querySelectorAll(".row").forEach((row, i) => {
-      const value = nums[i];
-      const percentage = (value / max) * 100;
-      const bar = row.querySelector(".bar");
-      bar.style.width = percentage + "%";
+    // Count-up animation
+    function animateCount(el, start, end, duration) {
+      let startTime = null;
+      function update(currentTime) {
+        if (!startTime) startTime = currentTime;
+        let progress = Math.min((currentTime - startTime) / duration, 1);
+        let value = Math.floor(progress * (end - start) + start);
+        el.textContent = value;
+        if (progress < 1) requestAnimationFrame(update);
+      }
+      requestAnimationFrame(update);
+    }
+
+    // Animate each row
+    rows.forEach((r, i) => {
+      const numEl = document.querySelector(r.numClass);
+      const barEl = document.querySelector(r.barClass);
+      const value = values[i];
+      const percentage = Math.round((value / max) * 100);
+
+      // Reset numbers
+      numEl.textContent = "0";
+
+      setTimeout(() => {
+        // Animate number
+        animateCount(numEl, 0, value, 1500);
+        // Animate bar width
+        barEl.style.width = percentage + "%";
+      }, i * 300); // stagger animations
     });
   </script>
 </body>
