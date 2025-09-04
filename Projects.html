@@ -3,62 +3,90 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Basic Dark Page</title>
+  <title>Project Competition Showcase</title>
   <style>
-    /* Reset some defaults */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
-      background: #121212; /* Dark background */
-      color: #f1f1f1;      /* Light text */
+      background: #0d0d0d; /* Dark theme */
+      color: #ffffff;
       font-family: Arial, sans-serif;
-      min-height: 100vh;
       display: flex;
-      flex-direction: column;
-      align-items: center;
       justify-content: center;
+      align-items: center;
+      min-height: 100vh;
     }
 
-    h1 {
-      margin-bottom: 10px;
-      font-size: 2rem;
-      text-align: center;
+    .container {
+      background: #1a1a1a;
+      border-radius: 12px;
+      padding: 30px;
+      width: 600px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.6);
     }
 
-    p {
+    .row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       margin-bottom: 20px;
-      color: #cccccc;
-      text-align: center;
     }
 
-    button {
-      background: #1e1e1e;
-      color: #f1f1f1;
-      border: 1px solid #333;
-      padding: 10px 20px;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background 0.3s ease;
+    .label {
+      flex: 1;
+      font-size: 1rem;
+      display: flex;
+      justify-content: space-between;
+      margin-right: 20px;
     }
 
-    button:hover {
-      background: #333;
+    .bar-container {
+      flex: 2;
+      background: #222;
+      border-radius: 8px;
+      overflow: hidden;
+      height: 16px;
+    }
+
+    .bar {
+      height: 100%;
+      background: linear-gradient(90deg, cyan, #00bcd4);
+      width: 0;
+      transition: width 1s ease;
     }
   </style>
 </head>
 <body>
-  <h1>Welcome to My Dark Webpage</h1>
-  <p>You can add your containers below later.</p>
-  <button onclick="sayHello()">Click Me</button>
+  <div class="container">
+    <div class="row">
+      <div class="label"><span>Projects</span> <span class="num">120</span></div>
+      <div class="bar-container"><div class="bar"></div></div>
+    </div>
+    <div class="row">
+      <div class="label"><span>Frontend</span> <span class="num">90</span></div>
+      <div class="bar-container"><div class="bar"></div></div>
+    </div>
+    <div class="row">
+      <div class="label"><span>Backend</span> <span class="num">60</span></div>
+      <div class="bar-container"><div class="bar"></div></div>
+    </div>
+    <div class="row">
+      <div class="label"><span>Full Stack</span> <span class="num">30</span></div>
+      <div class="bar-container"><div class="bar"></div></div>
+    </div>
+  </div>
 
   <script>
-    function sayHello() {
-      alert("Hello! Your dark theme page is working.");
-    }
+    // Get all numbers
+    const nums = Array.from(document.querySelectorAll(".num"))
+                      .map(n => parseInt(n.textContent));
+
+    const max = Math.max(...nums);
+
+    document.querySelectorAll(".row").forEach((row, i) => {
+      const value = nums[i];
+      const percentage = (value / max) * 100;
+      const bar = row.querySelector(".bar");
+      bar.style.width = percentage + "%";
+    });
   </script>
 </body>
 </html>
