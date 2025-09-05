@@ -28,7 +28,7 @@
 
 /* Profile Picture in Navbar */
 .profile-pic-nav {
-    border-radius: 20%; /* More circular profile picture */
+    border-radius: 50%; /* More circular profile picture */
     width: 40px; /* Smaller size */
     height: 40px;
     object-fit: cover;
