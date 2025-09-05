@@ -21,10 +21,13 @@ body, html {
 .profile-pic {
     flex: 1;
     max-width: 250px;
-    height: 250px;
+    aspect-ratio: 1 / 1;
     overflow: hidden;
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .profile-pic img {
