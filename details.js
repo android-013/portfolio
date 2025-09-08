@@ -2,7 +2,7 @@ const lines = [
   "💻 This site was developed by Aziz Rifat",
   "📧 Email: azrifat013@gmail.com",
   "📱 Phone & WhatsApp: +880-176644-2805",
-  "🌐 Website: https://aziz-rifat.netlify.app",
+  "🌐 Website: https://aziz-rifat.website",
   "🚀 Feel free to reach out anytime!"
 ];
 
