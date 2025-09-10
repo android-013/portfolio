@@ -8,7 +8,7 @@ const lines = [
 
 const style = [
   "color: #fff",
-  "font-size: 15px",
+  "font-size: 20px",
   "font-family: 'Fira Mono', monospace",
   "background: linear-gradient(90deg, #0ff 0%, #00f 100%)",
   "padding: 10px 18px",
