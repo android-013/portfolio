@@ -27,10 +27,19 @@
     <meta name="github-username" content="android-013">
     <meta name="github-repo" content="portfolio">
     
-    <title>Aziz Rifat - Web application Developer & Problem Solver</title>
+    <title>Aziz Rifat — Web Developer, Full Stack & Problem Solver</title>
     <link rel="icon" type="image/png" href="images/coding-web-development-svgrepo-com.png">
 
-    <title>Aziz Rifat</title>
+    <!-- PWA / theme -->
+    <meta name="theme-color" content="#0a0a0a">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon" href="images/py-Photoroom.jpg">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Open Graph extras -->
+    <meta property="og:site_name" content="Aziz Rifat">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:creator" content="@azizrifat">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/bg.css">
     <link rel="stylesheet" href="css/nav.css">
@@ -53,6 +62,39 @@
         gtag('js', new Date());
         gtag('config', 'G-5RKHXCLGZV');
     </script>
+        
+    <!-- Structured Data (JSON-LD): Person + WebSite -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "Person",
+                    "name": "Aziz Rifat",
+                    "url": "https://aziz-rifat.website/",
+                    "image": "https://aziz-rifat.website/images/py-Photoroom.jpg",
+                    "jobTitle": "Full Stack Web Developer",
+                    "description": "Full Stack developer, problem solver and tech enthusiast building web apps and tools.",
+                    "sameAs": [
+                        "https://github.com/android-013",
+                        "https://www.linkedin.com/in/aziz-rifat-63000b280",
+                        "https://www.facebook.com/THE.RIFAT.1/",
+                        "https://www.instagram.com/the.rifat.1/"
+                    ]
+                },
+                {
+                    "@type": "WebSite",
+                    "url": "https://aziz-rifat.website/",
+                    "name": "Aziz Rifat",
+                    "author": {
+                        "@type": "Person",
+                        "name": "Aziz Rifat"
+                    }
+                }
+            ]
+        }
+    </script>
+
 </head>
 <body>
     <!-- Matrix Rain Canvas -->

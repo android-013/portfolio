@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Point crawlers to the sitemap
+Sitemap: https://aziz-rifat.website/sitemap.xml
+
+# If you add staging or admin paths, disallow them here, e.g.
+# Disallow: /admin/
