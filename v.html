@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Be My Valentine 💖</title>
+
+<style>
+* { box-sizing: border-box; font-family: Arial, sans-serif; }
+
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff5f9e, #ff8ccf);
+    overflow: hidden;
+}
+
+/* Floating hearts */
+.heart {
+    position: absolute;
+    bottom: -20px;
+    animation: floatUp linear infinite;
+    opacity: 0.8;
+}
+
+@keyframes floatUp {
+    from { transform: translateY(0) scale(1); }
+    to { transform: translateY(-110vh) scale(1.5); opacity: 0; }
+}
+
+/* Card */
+.card {
+    background: white;
+    width: 90%;
+    max-width: 360px;
+    padding: 25px 20px 45px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 20px 45px rgba(0,0,0,0.3);
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: auto;
+}
+
+h1 { color: #ff3d6a; font-size: 1.8rem; }
+p { color: #555; margin-bottom: 25px; }
+
+.buttons { position: relative; height: 170px; }
+
+button {
+    padding: 14px 28px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 30px;
+}
+
+#yes { background: #ff3d6a; color: white; }
+
+#no {
+    background: #e0e0e0;
+    color: #444;
+    position: absolute;
+    left: 50%;
+    top: 90px;
+    transform: translateX(-50%);
+}
+
+/* Splash animation */
+.splash {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(255,61,106,0.7), transparent 70%);
+    border-radius: 50%;
+    animation: splash 0.45s ease-out forwards;
+    pointer-events: none;
+}
+
+@keyframes splash {
+    from { transform: scale(0.3); opacity: 1; }
+    to { transform: scale(1.6); opacity: 0; }
+}
+
+/* Warning message */
+.warning {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.8);
+    color: white;
+    padding: 10px 18px;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    display: none;
+}
+
+/* Final screen */
+.final {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg, #ff3d6a, #ff85b3);
+    color: white;
+    text-align: center;
+    padding-top: 35vh;
+}
+
+.final h2 { font-size: 2.4rem; }
+.final p { font-size: 1.2rem; }
+
+/* Confetti */
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    animation: fall 3s linear forwards;
+}
+
+@keyframes fall {
+    to { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card" id="card">
+    <h1>Will you be my Valentine forever? 💘</h1>
+    <p>Choose wisely 😌</p>
+
+    <div class="buttons">
+        <button id="yes">Yes ❤️</button>
+        <button id="no">No 💔</button>
+    </div>
+</div>
+
+<div class="final" id="final">
+    <h2>Congratulations 🎉💖</h2>
+    <p>You are officially mine forever 😍</p>
+</div>
+
+<div class="warning" id="warning">😏 Almost pressed NO huh?</div>
+
+<script>
+/* Floating hearts */
+setInterval(() => {
+    const h = document.createElement("div");
+    h.className = "heart";
+    h.textContent = "💖";
+    h.style.left = Math.random() * 100 + "vw";
+    h.style.fontSize = (18 + Math.random() * 22) + "px";
+    h.style.animationDuration = (4 + Math.random() * 3) + "s";
+    document.body.appendChild(h);
+    setTimeout(() => h.remove(), 7000);
+}, 400);
+
+/* NO button teleport + vibration + splash */
+const noBtn = document.getElementById("no");
+const card = document.getElementById("card");
+const warning = document.getElementById("warning");
+
+function teleport(e) {
+    if (navigator.vibrate) navigator.vibrate([40, 30, 40]);
+
+    const splash = document.createElement("div");
+    splash.className = "splash";
+
+    const rect = card.getBoundingClientRect();
+    const x = (e.touches ? e.touches[0].clientX : e.clientX) - rect.left - 75;
+    const y = (e.touches ? e.touches[0].clientY : e.clientY) - rect.top - 75;
+
+    splash.style.left = x + "px";
+    splash.style.top = y + "px";
+    card.appendChild(splash);
+    setTimeout(() => splash.remove(), 450);
+
+    noBtn.style.left = Math.random() * (card.offsetWidth - noBtn.offsetWidth) + "px";
+    noBtn.style.top = Math.random() * (card.offsetHeight - noBtn.offsetHeight) + "px";
+
+    if (Math.random() > 0.6) {
+        warning.style.display = "block";
+        setTimeout(() => warning.style.display = "none", 1200);
+    }
+}
+
+noBtn.addEventListener("mouseover", teleport);
+noBtn.addEventListener("touchstart", e => { e.preventDefault(); teleport(e); });
+
+/* YES → confetti + fireworks */
+document.getElementById("yes").addEventListener("click", () => {
+    card.style.display = "none";
+    document.getElementById("final").style.display = "block";
+
+    for (let i = 0; i < 120; i++) {
+        const c = document.createElement("div");
+        c.className = "confetti";
+        c.style.left = Math.random() * 100 + "vw";
+        c.style.top = "-10px";
+        c.style.background = `hsl(${Math.random()*360},100%,70%)`;
+        c.style.transform = `rotate(${Math.random()*360}deg)`;
+        document.body.appendChild(c);
+        setTimeout(() => c.remove(), 3000);
+    }
+});
+</script>
+
+</body>
+</html>
