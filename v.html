@@ -135,85 +135,85 @@ button {
 
 <body>
 
-<div class="card" id="card">
-    <h1>Will you be my Valentine forever? 💘</h1>
-    <p>Choose wisely 😌</p>
+    <div class="card" id="card">
+        <h1>Will you be my Valentine forever? 💘</h1>
+        <p>Choose wisely 😌</p>
 
-    <div class="buttons">
-        <button id="yes">Yes ❤️</button>
-        <button id="no">No 💔</button>
+        <div class="buttons">
+            <button id="yes">Yes ❤️</button>
+            <button id="no">No 💔</button>
+        </div>
     </div>
-</div>
 
-<div class="final" id="final">
-    <h2>Congratulations 🎉💖</h2>
-    <p>You are mine and I am yours, from this day till end of our days 😍</p>
-</div>
+    <div class="final" id="final">
+        <h2>Congratulations 🎉💖</h2>
+        <p>You are mine and I am yours, from this day till end of our days 😍</p>
+    </div>
 
-<div class="warning" id="warning">😏 Almost pressed NO huh?</div>
+    <div class="warning" id="warning">😏 Almost pressed NO huh?</div>
 
-<script>
-/* Floating hearts */
-setInterval(() => {
-    const h = document.createElement("div");
-    h.className = "heart";
-    h.textContent = "💖";
-    h.style.left = Math.random() * 100 + "vw";
-    h.style.fontSize = (18 + Math.random() * 22) + "px";
-    h.style.animationDuration = (4 + Math.random() * 3) + "s";
-    document.body.appendChild(h);
-    setTimeout(() => h.remove(), 7000);
-}, 400);
+    <script>
+    /* Floating hearts */
+    setInterval(() => {
+        const h = document.createElement("div");
+        h.className = "heart";
+        h.textContent = "💖";
+        h.style.left = Math.random() * 100 + "vw";
+        h.style.fontSize = (18 + Math.random() * 22) + "px";
+        h.style.animationDuration = (4 + Math.random() * 3) + "s";
+        document.body.appendChild(h);
+        setTimeout(() => h.remove(), 7000);
+    }, 400);
 
-/* NO button teleport + vibration + splash */
-const noBtn = document.getElementById("no");
-const card = document.getElementById("card");
-const warning = document.getElementById("warning");
+    /* NO button teleport + vibration + splash */
+    const noBtn = document.getElementById("no");
+    const card = document.getElementById("card");
+    const warning = document.getElementById("warning");
 
-function teleport(e) {
-    if (navigator.vibrate) navigator.vibrate([40, 30, 40]);
+    function teleport(e) {
+        if (navigator.vibrate) navigator.vibrate([40, 30, 40]);
 
-    const splash = document.createElement("div");
-    splash.className = "splash";
+        const splash = document.createElement("div");
+        splash.className = "splash";
 
-    const rect = card.getBoundingClientRect();
-    const x = (e.touches ? e.touches[0].clientX : e.clientX) - rect.left - 75;
-    const y = (e.touches ? e.touches[0].clientY : e.clientY) - rect.top - 75;
+        const rect = card.getBoundingClientRect();
+        const x = (e.touches ? e.touches[0].clientX : e.clientX) - rect.left - 75;
+        const y = (e.touches ? e.touches[0].clientY : e.clientY) - rect.top - 75;
 
-    splash.style.left = x + "px";
-    splash.style.top = y + "px";
-    card.appendChild(splash);
-    setTimeout(() => splash.remove(), 450);
+        splash.style.left = x + "px";
+        splash.style.top = y + "px";
+        card.appendChild(splash);
+        setTimeout(() => splash.remove(), 450);
 
-    noBtn.style.left = Math.random() * (card.offsetWidth - noBtn.offsetWidth) + "px";
-    noBtn.style.top = Math.random() * (card.offsetHeight - noBtn.offsetHeight) + "px";
+        noBtn.style.left = Math.random() * (card.offsetWidth - noBtn.offsetWidth) + "px";
+        noBtn.style.top = Math.random() * (card.offsetHeight - noBtn.offsetHeight) + "px";
 
-    if (Math.random() > 0.6) {
-        warning.style.display = "block";
-        setTimeout(() => warning.style.display = "none", 1200);
+        if (Math.random() > 0.6) {
+            warning.style.display = "block";
+            setTimeout(() => warning.style.display = "none", 1200);
+        }
     }
-}
 
-noBtn.addEventListener("mouseover", teleport);
-noBtn.addEventListener("touchstart", e => { e.preventDefault(); teleport(e); });
+    noBtn.addEventListener("mouseover", teleport);
+    noBtn.addEventListener("touchstart", e => { e.preventDefault(); teleport(e); });
 
-/* YES → confetti + fireworks */
-document.getElementById("yes").addEventListener("click", () => {
-    card.style.display = "none";
-    document.getElementById("final").style.display = "block";
+    /* YES → confetti + fireworks */
+    document.getElementById("yes").addEventListener("click", () => {
+        card.style.display = "none";
+        document.getElementById("final").style.display = "block";
 
-    for (let i = 0; i < 120; i++) {
-        const c = document.createElement("div");
-        c.className = "confetti";
-        c.style.left = Math.random() * 100 + "vw";
-        c.style.top = "-10px";
-        c.style.background = `hsl(${Math.random()*360},100%,70%)`;
-        c.style.transform = `rotate(${Math.random()*360}deg)`;
-        document.body.appendChild(c);
-        setTimeout(() => c.remove(), 3000);
-    }
-});
-</script>
+        for (let i = 0; i < 120; i++) {
+            const c = document.createElement("div");
+            c.className = "confetti";
+            c.style.left = Math.random() * 100 + "vw";
+            c.style.top = "-10px";
+            c.style.background = `hsl(${Math.random()*360},100%,70%)`;
+            c.style.transform = `rotate(${Math.random()*360}deg)`;
+            document.body.appendChild(c);
+            setTimeout(() => c.remove(), 3000);
+        }
+    });
+    </script>
 
 </body>
 </html>
